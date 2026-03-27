@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>汽车驶入动画 - 作业提交</title>
+  <style>
+    /* 汽车容器 */
+    .car-container {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #333;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      
+      /* 背景图片 - 替换为你的粉色跑车图片URL */
+      background: url("https://ts1.tc.mm.bing.net/th/id/R-C.e97562b73b1f7e6e6e61552df80668e7?rik=T9MeVP1Ys2nsmA&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20200204%2fe2a4690009544e5e8a580237afde1738.jpeg&ehk=8Hg1jRuQUi1SgLPAz9Lvjm6dg%2bnoCmxXnFok4qcG4jk%3d&risl=&pid=ImgRaw&r=0") no-repeat center center;
+      background-size: cover;
+      
+      /* 动画效果 */
+      animation: driveIn 4s ease-in-out forwards;
+    }
+
+    /* 动画关键帧：从远处驶来 */
+    @keyframes driveIn {
+      0% {
+        transform: scale(0.2) translateX(-100px);
+        opacity: 0.3;
+        filter: blur(2px);
+      }
+      60% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+        filter: blur(0);
+      }
+      100% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    /* 页面美化 */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .instruction {
+      color: #666;
+      margin-top: 20px;
+      font-size: 14px;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚗 汽车驶入动画效果</h1>
+    <p>200x200像素div，汽车从远处驶来并停住</p >
+    
+    <!-- 动画展示区域 -->
+    <div class="car-container"></div>
+    
+    <div class="instruction">
+      <strong>说明：</strong><br>
+      1. 将代码中的'你的粉色跑车图片URL'替换为实际图片链接<br>
+      2. 动画持续4秒，使用ease-in-out缓动函数<br>
+      3. 汽车从远处（缩小20%）快速驶来，最后缓慢停下
+    </div>
+  </div>
+</body>
+</html>
